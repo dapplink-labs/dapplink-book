@@ -68,6 +68,18 @@
             overflow: hidden;
         }
 
+        .page-with-cpchain {
+            height: auto;
+            min-height: 210mm;
+            overflow: visible;
+        }
+
+        .page-with-advantages {
+            height: auto;
+            min-height: 210mm;
+            overflow: visible;
+        }
+
 
         /* 绿色渐变线条装饰元素 */
         .page::before {
@@ -1915,6 +1927,38 @@
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .project-showcase.cpchain {
+                margin-top: 0 !important;
+            }
+
+            .page-with-cpchain {
+                min-height: auto;
+                overflow: visible;
+            }
+
+            .page-with-advantages {
+                min-height: auto;
+                overflow: visible;
+            }
+
+            /* 移动端调整官方渠道网格布局 */
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 2mm !important;
+            }
+
+            /* 移动端调整社交卡片 */
+            .social-grid > div {
+                padding: 2mm !important;
+                box-sizing: border-box;
+                font-size: 8pt !important;
+            }
+
+            .social-grid > div img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
         }
 
         /* LOGO 区域样式 */
@@ -2339,7 +2383,7 @@
         </div>
 
         <!-- 第9页：技术优势展示 -->
-        <div class="page">
+        <div class="page page-with-advantages">
             <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">技术优势与差异化</div>
@@ -2406,7 +2450,7 @@
         </div>
 
         <!-- 第10页：成功案例 -->
-        <div class="page">
+        <div class="page page-with-cpchain">
             <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">成功案例</div>
@@ -2444,7 +2488,7 @@
 
             <div class="colorful-divider"></div>
 
-            <div class="project-showcase cpchain" style="margin-top: -10mm;">
+            <div class="project-showcase cpchain" style="margin-top: -5mm;">
                 <div class="project-name cpchain">CpChain</div>
                 <div class="mini-colorful-line"></div>
 
@@ -2803,7 +2847,7 @@
             <div class="content-text"><span class="emphasis-text">加入 DappLink，一起构建 Web3 的未来！</span></div>
 
             <div class="section-title">官方渠道</div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 3mm 0;">
+            <div class="social-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 3mm 0;">
                 <!-- 官网卡片 -->
                 <div style="background: #ffffff; border-radius: 3mm; padding: 3mm; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 1px solid rgba(203, 213, 225, 0.3); text-align: center;">
                     <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 2mm;">
