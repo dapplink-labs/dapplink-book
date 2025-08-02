@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DappLink A5小册子 - Web3中间件基础设施平台</title>
+    <title>DappLink - Web3中间件基础设施平台</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -65,7 +65,6 @@
             display: flex;
             flex-direction: column;
             margin: 10px auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
@@ -910,31 +909,13 @@
             position: relative;
             overflow: hidden;
             padding: 20mm 15mm;
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.95),
-                0 6px 20px rgba(16, 185, 129, 0.08);
         }
 
+        /* 移除封面顶部绿色条 */
         .cover-page::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.08) 0%, transparent 35%),
-                radial-gradient(circle at 25% 75%, rgba(99, 102, 241, 0.08) 0%, transparent 35%),
-                linear-gradient(135deg,
-                    rgba(16, 185, 129, 0.05) 0%,
-                    rgba(59, 130, 246, 0.08) 25%,
-                    rgba(34, 197, 94, 0.05) 50%,
-                    rgba(99, 102, 241, 0.08) 75%,
-                    rgba(16, 185, 129, 0.05) 100%);
-            z-index: 1;
+            display: none;
         }
+
 
         .cover-page > * {
             position: relative;
@@ -1841,6 +1822,26 @@
 
 
 
+        /* 页眉样式 */
+        .page-header {
+            position: absolute;
+            top: 3mm;
+            left: 10mm;
+            right: 10mm;
+            font-size: 9pt;
+            font-weight: 300;
+            color: var(--primary-green);
+            text-align: center;
+            z-index: 10;
+            opacity: 0.9;
+        }
+
+        /* 封面和封底不显示页眉 */
+        .cover-page .page-header,
+        .back-cover .page-header {
+            display: none;
+        }
+
         /* 强化打印颜色保持CSS */
         * {
             -webkit-print-color-adjust: exact !important;
@@ -1965,45 +1966,7 @@
         <!-- 第1页：封面 -->
         <div class="page cover-page">
             <div class="cover-decoration">
-                <!-- 背景光效 -->
-                <div class="bg-glow"></div>
 
-                <!-- 底部几何体堆积 -->
-                <div class="bottom-geometry-stack">
-                    <!-- 大型几何体 -->
-                    <div class="geo-shape large-circle"></div>
-                    <div class="geo-shape large-triangle"></div>
-                    <div class="geo-shape large-hexagon"></div>
-                    <div class="geo-shape large-diamond"></div>
-                    <div class="geo-shape large-pentagon"></div>
-
-                    <!-- 中型几何体 -->
-                    <div class="geo-shape medium-circle-2"></div>
-                    <div class="geo-shape medium-square"></div>
-                    <div class="geo-shape medium-triangle"></div>
-
-                    <!-- 小型几何体 - 已删除 -->
-
-                    <!-- 重新排版的几何体集合 - 鲜明颜色，适合打印 -->
-
-                    <!-- 重新打乱的左侧几何体组 -->
-                    <div style="position: absolute; bottom: 2mm; right: 35mm; width: 18mm; height: 18mm; background: #10b981; border-radius: 50%; z-index: 2; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 8mm; left: 8mm; width: 12mm; height: 12mm; background: #3b82f6; transform: rotate(25deg); z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 15mm; right: 15mm; width: 9mm; height: 9mm; background: #ec4899; clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); z-index: 4; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                    <!-- 重新打乱的中间几何体组 -->
-                    <div style="position: absolute; bottom: 3mm; left: 25mm; width: 15mm; height: 11mm; background: #f59e0b; border-radius: 3mm; z-index: 2; transform: rotate(30deg); -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 1mm; right: 8mm; width: 11mm; height: 11mm; background: #8b5cf6; border-radius: 50%; z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 12mm; left: 65mm; width: 7mm; height: 7mm; background: #06b6d4; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); z-index: 4; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                    <!-- 重新排版的右侧几何体 -->
-                    <div style="position: absolute; bottom: 18mm; left: 45mm; width: 13mm; height: 13mm; background: #f472b6; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                    <!-- 重新打乱的装饰点 -->
-                    <div style="position: absolute; bottom: 22mm; right: 60mm; width: 4mm; height: 4mm; background: #a78bfa; border-radius: 50%; z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 28mm; left: 35mm; width: 3mm; height: 3mm; background: #fbbf24; border-radius: 50%; z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                    <div style="position: absolute; bottom: 25mm; left: 75mm; width: 5mm; height: 5mm; background: #f43f5e; transform: rotate(-30deg); z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                </div>
 
             </div>
 
@@ -2012,26 +1975,10 @@
             <div class="cover-subtitle">构建 Web3 中间件，赋能区块链未来</div>
             <div style="position: relative; display: flex; flex-direction: column; align-items: center; margin: 20mm 0; padding: 8mm 0;">
 
-                <!-- 背景光效 -->
-                <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120mm; height: 100%; background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.08) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 70%); z-index: -1; border-radius: 20px;"></div>
 
 
 
 
-                <!-- 优化的侧边装饰元素 -->
-                <div style="position: absolute; left: -20mm; top: 50%; transform: translateY(-50%);">
-                    <div style="width: 6mm; height: 6mm; background: radial-gradient(circle, #10b981, #34d399); border-radius: 50%; opacity: 0.7; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);"></div>
-                    <div style="width: 3mm; height: 3mm; background: radial-gradient(circle, #34d399, #6ee7b7); border-radius: 50%; position: absolute; top: -8mm; left: 2mm; opacity: 0.5;"></div>
-                </div>
-
-                <div style="position: absolute; right: -20mm; top: 50%; transform: translateY(-50%);">
-                    <div style="width: 6mm; height: 6mm; background: radial-gradient(circle, #3b82f6, #60a5fa); border-radius: 50%; opacity: 0.7; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);"></div>
-                    <div style="width: 3mm; height: 3mm; background: radial-gradient(circle, #60a5fa, #93c5fd); border-radius: 50%; position: absolute; top: -8mm; right: 2mm; opacity: 0.5;"></div>
-                </div>
-
-                <!-- 顶部微小装饰星点 -->
-                <div style="position: absolute; top: -5mm; left: 30%; width: 2mm; height: 2mm; background: radial-gradient(circle, #10b981, transparent); border-radius: 50%; opacity: 0.6;"></div>
-                <div style="position: absolute; top: -3mm; right: 25%; width: 1.5mm; height: 1.5mm; background: radial-gradient(circle, #3b82f6, transparent); border-radius: 50%; opacity: 0.5;"></div>
 
             </div>
         </div>
@@ -2039,6 +1986,7 @@
 
         <!-- 第3页：品牌介绍 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">品牌介绍</div>
 
@@ -2085,6 +2033,7 @@
 
         <!-- 第4页：产品体系 - 钱包系统 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">产品体系：钱包系统</div>
 
@@ -2149,6 +2098,7 @@
 
         <!-- 第5页：产品体系 - Dapp 平台 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">产品体系：Dapp 平台</div>
 
@@ -2218,6 +2168,7 @@
 
         <!-- 第6页：产品体系 - 公链服务 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">产品体系：公链服务</div>
 
@@ -2279,6 +2230,7 @@
 
         <!-- 第7页：产品体系 - 验证网络 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">产品体系：验证网络</div>
 
@@ -2330,6 +2282,7 @@
 
         <!-- 第8页：产品体系 - RWA & PayFi -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">产品体系：RWA & PayFi</div>
 
@@ -2387,6 +2340,7 @@
 
         <!-- 第9页：技术优势展示 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">技术优势与差异化</div>
 
@@ -2453,6 +2407,7 @@
 
         <!-- 第10页：成功案例 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">成功案例</div>
 
@@ -2489,7 +2444,7 @@
 
             <div class="colorful-divider"></div>
 
-            <div class="project-showcase cpchain">
+            <div class="project-showcase cpchain" style="margin-top: -10mm;">
                 <div class="project-name cpchain">CpChain</div>
                 <div class="mini-colorful-line"></div>
 
@@ -2524,6 +2479,7 @@
 
         <!-- 第11页：成功案例 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">成功案例</div>
 
@@ -2596,6 +2552,7 @@
 
         <!-- 第12页：生态合作伙伴 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">生态合作伙伴</div>
 
@@ -2640,6 +2597,7 @@
 
         <!-- 第13页：用户群体 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">面向用户群体</div>
 
@@ -2724,6 +2682,7 @@
 
         <!-- 第14页：核心团队 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">核心团队</div>
 
@@ -2803,6 +2762,7 @@
 
         <!-- 第15页：发展路线图 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">发展愿景与路线图</div>
 
@@ -2835,6 +2795,7 @@
 
         <!-- 第16页：联系方式 -->
         <div class="page">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
 
             <div class="page-title">联系我们</div>
@@ -2892,7 +2853,7 @@
                         <img src="assets/social/wechat.png" alt="WeChat" style="width: 5mm; height: 5mm; margin-right: 2mm;">
                         <span style="font-weight: 700; color: var(--primary-green); font-size: 9pt;">WeChat</span>
                     </div>
-                    <div style="font-size: 7pt; color: var(--text-dark); margin-bottom: 2mm;">TheWeb3Dao</div>
+                    <div style="font-size: 7pt; color: var(--text-dark); margin-bottom: 2mm;">LGZAXE</div>
                    <img height="100"; width="100" src="./assets/social/weixin.png"></img>
                 </div>
             </div>
@@ -2912,40 +2873,9 @@
         </div>
 
         <!-- 第17页：封底 -->
-        <div class="page" style="background: linear-gradient(135deg, #fefffe 0%, #f9fefb 25%, #f0fdf4 50%, #ecfdf5 75%, #d1fae5 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
+        <div class="page" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
 
-            <!-- 背景装饰元素 -->
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%); z-index: 1;"></div>
 
-            <!-- 底部几何体装饰区域 - 鲜明颜色，适合打印 -->
-            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40mm; z-index: 1;">
-
-                <!-- 左侧几何体组 -->
-                <div style="position: absolute; bottom: 2mm; left: 8mm; width: 18mm; height: 18mm; background: #10b981; border-radius: 50%; z-index: 2; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 8mm; left: 18mm; width: 12mm; height: 12mm; background: #3b82f6; transform: rotate(45deg); z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 15mm; left: 12mm; width: 8mm; height: 8mm; background: #ec4899; clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); z-index: 4; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                <!-- 中间几何体组 -->
-                <div style="position: absolute; bottom: 1mm; left: 45mm; width: 16mm; height: 12mm; background: #f59e0b; border-radius: 3mm; z-index: 2; transform: rotate(-12deg); -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 12mm; left: 55mm; width: 10mm; height: 10mm; background: #8b5cf6; border-radius: 50%; z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 18mm; left: 50mm; width: 6mm; height: 6mm; background: #06b6d4; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); z-index: 4; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                <!-- 右侧几何体组 - 调整位置避免与Logo重叠 -->
-                <div style="position: absolute; bottom: 3mm; right: 60mm; width: 14mm; height: 11mm; background: #34d399; border-radius: 4mm; z-index: 2; transform: rotate(18deg); -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 14mm; right: 53mm; width: 12mm; height: 12mm; background: #f472b6; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); z-index: 3; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 10mm; right: 67mm; width: 7mm; height: 7mm; background: #60a5fa; border-radius: 50%; z-index: 4; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                <!-- 额外装饰小元素 -->
-                <div style="position: absolute; bottom: 25mm; left: 25mm; width: 4mm; height: 4mm; background: #a78bfa; border-radius: 50%; z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 30mm; left: 75mm; width: 3mm; height: 3mm; background: #fbbf24; border-radius: 50%; z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 28mm; right: 75mm; width: 5mm; height: 5mm; background: #f43f5e; transform: rotate(30deg); z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 32mm; right: 80mm; width: 4mm; height: 4mm; background: #06d6a0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); z-index: 5; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-                <!-- 顶部散落的小装饰 -->
-                <div style="position: absolute; bottom: 35mm; left: 40mm; width: 3mm; height: 3mm; background: #ec4899; border-radius: 50%; z-index: 6; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-                <div style="position: absolute; bottom: 37mm; left: 65mm; width: 2mm; height: 2mm; background: #3b82f6; border-radius: 50%; z-index: 6; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;"></div>
-
-            </div>
 
             <!-- 主要内容 -->
             <div style="z-index: 2; position: relative;">
