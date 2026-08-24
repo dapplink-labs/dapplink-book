@@ -1,0 +1,11 @@
+services:
+  dapplink-book:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dapplink-book:latest
+    container_name: dapplink-book
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3016:80"
+

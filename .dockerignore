@@ -1,0 +1,10 @@
+.git
+.github
+.idea
+*.md
+LICENSE
+CNAME
+docker-compose*.yml
+deploy/
+.env*
+
