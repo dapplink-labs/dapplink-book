@@ -750,8 +750,12 @@
         .team-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, minmax(0, 1fr));
             gap: 4mm;
             margin-top: 3mm;
+            margin-bottom: 3mm;
+            flex: 1;
+            align-items: stretch;
         }
 
         .team-member-card {
@@ -763,7 +767,11 @@
             overflow: visible;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            min-height: auto;
+            min-height: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .team-member-card:hover {
@@ -2466,7 +2474,11 @@
 
                 <div class="project-details">
                     <div class="project-detail-item">
-                        <div class="project-detail-label">技术方案:</div>
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://manta.network/" target="_blank" rel="noopener noreferrer">https://manta.network/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
                         <div class="project-detail-content">双协议质押模型 + 降低一层提现时间 + 快速部署</div>
                     </div>
                     <div class="project-detail-item">
@@ -2475,20 +2487,11 @@
                     </div>
                 </div>
 
-                <div class="project-effects">
-                    <div class="project-effects-title">项目效果</div>
-                    <div class="project-effects-list">
-                        <div class="project-effect-item">可接入任意协议，含 Symbiotic/Babylon/Eigenlayer 等</div>
-                        <div class="project-effect-item">1天快速上线</div>
-                        <div class="project-effect-item">可部署在 ZK RollUp & OP RollUp 以及 Layer3 网络</div>
-                        <div class="project-effect-item">目前已经集成到 Manta 主网</div>
-                    </div>
-                </div>
             </div>
 
             <div class="colorful-divider"></div>
 
-            <div class="project-showcase cpchain" style="margin-top: -5mm;">
+            <div class="project-showcase cpchain">
                 <div class="project-name cpchain">CpChain</div>
                 <div class="mini-colorful-line"></div>
 
@@ -2499,7 +2502,11 @@
 
                 <div class="project-details">
                     <div class="project-detail-item">
-                        <div class="project-detail-label">技术方案:</div>
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://www.cpchain.com/" target="_blank" rel="noopener noreferrer">https://www.cpchain.com/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
                         <div class="project-detail-content">L1 公链 + 跨链桥 + Swap + Oracle</div>
                     </div>
                     <div class="project-detail-item">
@@ -2508,93 +2515,178 @@
                     </div>
                 </div>
 
-                <div class="project-effects">
-                    <div class="project-effects-title">项目效果</div>
-                    <div class="project-effects-list">
-                        <div class="project-effect-item">上线时间缩短至1天</div>
-                        <div class="project-effect-item">节省开发资源50%</div>
-                        <div class="project-effect-item">支持10000+ TPS</div>
-                        <div class="project-effect-item">支持主流链跨链</div>
+            </div>
+
+        </div>
+
+        <!-- 第11页：成功案例 -->
+        <div class="page page-with-cpchain">
+            <div class="page-header">DappLink - Web3中间件基础设施平台</div>
+            <div class="side-decoration"></div>
+            <div class="page-title">成功案例</div>
+
+            <div class="project-showcase" style="border-color: rgba(6, 182, 212, 0.35); background: linear-gradient(135deg, rgba(236, 254, 255, 0.8), rgba(255, 255, 255, 0.95));">
+                <div class="project-name" style="color: #0891b2;">Dolphinode</div>
+                <div class="mini-colorful-line blue"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(236, 254, 255, 0.55);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">面向真实商品互联网构建链上结算基础设施，为上层应用提供高性能 Layer 1 底座</div>
+                </div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://chain.dolphinode.world/" target="_blank" rel="noopener noreferrer">https://chain.dolphinode.world/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">L1 公链 + 跨链桥 + Swap + Oracle</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">核心技术:</div>
+                        <div class="project-detail-content">PoS 公链 + ZK-ID 合规身份 + 链上智能合约 + 跨境结算</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colorful-divider"></div>
+
+            <div class="project-showcase" style="border-color: rgba(236, 72, 153, 0.35); background: linear-gradient(135deg, rgba(253, 242, 248, 0.8), rgba(255, 255, 255, 0.95));">
+                <div class="project-name" style="color: #db2777;">WhimLand</div>
+                <div class="mini-colorful-line pink"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(253, 242, 248, 0.55);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">连接数字商品与真实世界商品的全球化链上消费平台，打通交易与履约流程</div>
+                </div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://www.whim.land/" target="_blank" rel="noopener noreferrer">https://www.whim.land/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">Web3 钱包 + 数字商品市场 + AI 商品发现 + 全球商品履约</div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- 第11页：成功案例 -->
-        <div class="page">
+        <!-- 第12页：成功案例 -->
+        <div class="page page-with-cpchain">
             <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
             <div class="page-title">成功案例</div>
 
-            <div class="project-showcase fishcake" style="margin: 2mm 0; padding: 3mm;">
-                <div class="project-name fishcake" style="font-size: 12pt;">FishCake</div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">技术方案:</div>
-                    <div class="project-detail-content">活动挖矿 + 质押奖励 + Web3 钱包</div>
+            <div class="project-showcase fishcake">
+                <div class="project-name fishcake">FishCake</div>
+                <div class="mini-colorful-line pink"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(253, 242, 248, 0.5);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">面向用户与商家的 Web3 活动平台，通过活动、质押与钱包能力连接社区参与和链上激励</div>
                 </div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">项目效果:</div>
-                    <div class="project-detail-content">基础用户和商家用户权限隔离，发起活动就等于挖矿，集成 Web3 钱包</div>
-                </div>
-            </div>
-
-            <div class="mini-colorful-line pink" style="width: 100%;"></div>
-
-            <div class="project-showcase parapack" style="margin: 2mm 0; padding: 3mm;">
-                <div class="project-name parapack" style="font-size: 12pt;">Parapack</div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">技术方案:</div>
-                    <div class="project-detail-content">Web3 钱包 + Dapp 浏览器 + Web3 直播 + Web3 活动平台</div>
-                </div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">项目效果:</div>
-                    <div class="project-detail-content">泛娱乐的 Web3 生活平台，集成 Web3 钱包，Dapp 浏览器，Web3 任务平台</div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://fishcake.org/" target="_blank" rel="noopener noreferrer">https://fishcake.org/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">活动挖矿 + 质押奖励 + Web3 钱包</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mini-colorful-line blue" style="width: 100%;"></div>
+            <div class="colorful-divider"></div>
 
-            <div class="project-showcase datamining" style="margin: 2mm 0; padding: 3mm;">
-                <div class="project-name datamining" style="font-size: 12pt;">DataMining</div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">技术方案:</div>
-                    <div class="project-detail-content">Web3 数据平台，区块链世界的天眼查</div>
+            <div class="project-showcase parapack">
+                <div class="project-name parapack">Parapack</div>
+                <div class="mini-colorful-line pink"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(253, 242, 248, 0.5);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">融合钱包、内容、直播和任务活动的 Web3 泛娱乐生活平台</div>
                 </div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">核心技术:</div>
-                    <div class="project-detail-content">数据抓取与清洗 + AI任务流 + AI 选币 + 任务平台</div>
-                </div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">项目效果:</div>
-                    <div class="project-detail-content">链上链下数据抓取，按照业务做链下数据清洗，Web3 数据结合 AI 大模型</div>
-                </div>
-            </div>
-
-            <div class="mini-colorful-line green" style="width: 100%;"></div>
-
-            <div class="project-showcase roothash" style="margin: 2mm 0; padding: 3mm;">
-                <div class="project-name roothash" style="font-size: 12pt;">RootHash</div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">技术方案:</div>
-                    <div class="project-detail-content">集 Web3 钱包 + RWA + PayFi 和量化一体化平台</div>
-                </div>
-                <div class="project-detail-item">
-                    <div class="project-detail-label">项目效果:</div>
-                    <div class="project-detail-content">传统量化策略与 AI 量化策略结合，基于 AI-Agent 安全易用的 Web3 钱包</div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://www.parapack.ai/" target="_blank" rel="noopener noreferrer">https://www.parapack.ai/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">Web3 钱包 + Dapp 浏览器 + Web3 直播 + Web3 活动平台</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mini-colorful-line rainbow" style="width: 100%;"></div>
+            <div class="colorful-divider"></div>
 
-            <div class="case-card" style="background: linear-gradient(135deg, var(--very-light-green), var(--bg-white)); border: 2px solid var(--accent-green);">
-                <div class="case-title" style="color: var(--primary-green); font-size: 10pt;">共同特点</div>
-                <div class="case-description" style="color: var(--text-dark); font-size: 8pt;">所有项目都实现了快速部署、显著降低开发成本、提升用户体验的效果</div>
+            <div class="project-showcase datamining">
+                <div class="project-name datamining">DataMining</div>
+                <div class="mini-colorful-line green"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(240, 253, 244, 0.5);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">聚合链上与链下信息的 Web3 数据平台，为项目研究、资产分析与任务运营提供数据支持</div>
+                </div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content">暂未公开</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">Web3 数据平台，区块链世界的天眼查</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">核心技术:</div>
+                        <div class="project-detail-content">数据抓取与清洗 + AI任务流 + AI 选币 + 任务平台</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colorful-divider"></div>
+
+            <div class="project-showcase roothash">
+                <div class="project-name roothash">RootHash</div>
+                <div class="mini-colorful-line green"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(240, 253, 244, 0.5);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">融合 Web3 钱包、RWA、PayFi 与智能量化能力的一体化数字金融平台</div>
+                </div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content">暂未公开</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">集 Web3 钱包 + RWA + PayFi 和量化一体化平台</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colorful-divider"></div>
+
+            <div class="project-showcase" style="border-color: rgba(220, 252, 60, 0.6); background: linear-gradient(135deg, rgba(247, 254, 231, 0.75), rgba(255, 255, 255, 0.95));">
+                <div class="project-name" style="color: #65a30d;">TrustMe</div>
+                <div class="mini-colorful-line green"></div>
+                <div class="case-card" style="margin: 2mm 0; background: rgba(247, 254, 231, 0.6);">
+                    <div class="case-title">项目背景</div>
+                    <div class="case-description">基于 USDT 的全球虚拟卡与实体卡服务平台，为 Web3 用户连接数字资产与日常支付场景</div>
+                </div>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">项目官方链接:</div>
+                        <div class="project-detail-content"><a href="https://www.trustmefi.ai/" target="_blank" rel="noopener noreferrer">https://www.trustmefi.ai/</a></div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">产品功能:</div>
+                        <div class="project-detail-content">USDT 充值 + 全球虚拟卡与实体卡 + KYC + 支付风控</div>
+                    </div>
+                </div>
             </div>
 
         </div>
 
-        <!-- 第12页：生态合作伙伴 -->
+        <!-- 第13页：生态合作伙伴 -->
         <div class="page">
             <div class="page-header">DappLink - Web3中间件基础设施平台</div>
             <div class="side-decoration"></div>
@@ -2606,6 +2698,8 @@
             <div class="partners-grid">
                 <div class="partner-logo"><img src="assets/partners/Manta Network.jpg" alt="Manta Network" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
                 <div class="partner-logo"><img src="assets/partners/CpChain.png" alt="CpChain" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
+                <div class="partner-logo"><img src="assets/partners/dolphinode.png" alt="Dolphinode" style="max-width: 90%; max-height: 90%; object-fit: contain;"/><span style="margin-left: 1.5mm; font-size: 7pt; font-weight: 700; color: #0891b2;">Dolphinode</span></div>
+                <div class="partner-logo"><img src="assets/partners/whimland.png" alt="WhimLand" style="max-width: 90%; max-height: 90%; object-fit: contain;"/><span style="margin-left: 1.5mm; font-size: 7pt; font-weight: 700; color: #db2777;">WhimLand</span></div>
                 <div class="partner-logo"><img src="assets/partners/DataMining.png" alt="DataMining" style="max-width: 150%; max-height: 150%; object-fit: contain;"/></div>
                 <div class="partner-logo"><img src="assets/partners/Parapakogo.svg" alt="Parapack" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
                 <div class="partner-logo"><img src="assets/partners/FishCake.jpg" alt="FishCake" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
@@ -2613,7 +2707,7 @@
                 <div class="partner-logo"><img src="assets/partners/book.png" alt="TheWeb3 Book" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
                 <div class="partner-logo"><img src="assets/partners/Theweb3SecrityLabs.png" alt="TheWeb3 Security Labs" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
                 <div class="partner-logo"><img src="assets/partners/root.png" alt="RootHash" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
-                <div class="partner-logo"><img src="assets/partners/ROOTDATA.webp" alt="ROOTDATA" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
+                <div class="partner-logo" style="background: #09090b;"><img src="assets/partners/trustme.png" alt="TrustMe" style="max-width: 90%; max-height: 90%; object-fit: contain;"/></div>
             </div>
 
             <div class="section-title">合作数据</div>
@@ -2757,49 +2851,28 @@
                     <div class="member-header">
                         <div class="member-photo"></div>
                         <div class="member-basic-info">
-                            <div class="member-name tech-expert">Sinco</div>
+                            <div class="member-name tech-expert">Shivanshu</div>
                             <div class="member-title">首席技术专家</div>
                         </div>
                     </div>
-                    <div class="member-description">AI + Web3 双领域技术专家，6年技术研发经验。在 AI 算法工程化、大规模系统架构、区块链技术应用等方面拥有深厚造诣。</div>
+                    <div class="member-description">专注于 Web3 基础设施与分布式系统研发，在区块链架构、智能合约及跨链技术应用方面拥有丰富经验，负责推动核心技术方案设计与工程落地。</div>
                 </div>
 
                 <div class="team-member-card cofounder">
                     <div class="member-header">
                         <div class="member-photo"></div>
                         <div class="member-basic-info">
-                            <div class="member-name cofounder">Felix</div>
-                            <div class="member-title">联合创始人兼商务负责人</div>
+                            <div class="member-name cofounder">Neil</div>
+                            <div class="member-title">全球生态负责人</div>
                         </div>
                     </div>
-                    <div class="member-description">毕业于新南威尔士大学（全球Top 20）本科及硕士学位，深耕Web3领域4年，成功推动与多家顶级公链及交易所的战略合作。</div>
+                    <div class="member-description">深耕 Web3 生态建设与国际市场拓展，具备项目合作、产品规划及社区运营经验，负责推动全球合作伙伴关系与 DappLink 生态协同发展。</div>
                 </div>
 
-                <div class="team-member-card tech-director">
-                    <div class="member-header">
-                        <div class="member-photo"></div>
-                        <div class="member-basic-info">
-                            <div class="member-name tech-director">Pony</div>
-                            <div class="member-title">技术总监</div>
-                        </div>
-                    </div>
-                    <div class="member-description">毕业于华南师范大学，DappLink 技术总监。曾任宁波银行数据开发工程师项目经理，西藏自治区医疗保健项目数据中台项目经理。</div>
-                </div>
-
-                <div class="team-member-card bd">
-                    <div class="member-header">
-                        <div class="member-photo"></div>
-                        <div class="member-basic-info">
-                            <div class="member-name bd">Anita</div>
-                            <div class="member-title">商务 BD</div>
-                        </div>
-                    </div>
-                    <div class="member-description">曾在知名新能源汽车公司主导产品规划与落地；后转战 Web3 领域，担任产品经理兼商务拓展，主导多项 DeFi、NFT、RWA 及跨链中间件产品从 0 到 1 完整上线。</div>
-                </div>
             </div>
 
-            <div style="margin-top: 2mm; margin-bottom: 8mm; text-align: center;">
-                <div style="color: var(--text-dark); font-size: 10pt; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; padding: 0 2mm;">团队成员具备丰富的 Web3 项目经验，涵盖技术开发、产品设计、商务拓展等各个环节，为 DappLink 的快速发展提供强有力支撑。</div>
+            <div style="margin-top: 2mm; margin-bottom: 2mm; text-align: center;">
+                <div style="color: var(--text-dark); font-size: 10pt; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; padding: 0 2mm;">核心团队具备丰富的 Web3 架构设计与区块链开发经验，为 DappLink 的快速发展提供强有力支撑。</div>
             </div>
 
         </div>
